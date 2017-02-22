@@ -48,6 +48,7 @@ namespace MaPremiereApplicationWPF
 
         }
 
+        //ajout evenement sur le bouton 2
         private void MonSecondBouton_Click(object sender,RoutedEventArgs e)
         {
             MonPremierLabel.Content = DateTime.Now.Second;
