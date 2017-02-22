@@ -20,9 +20,38 @@ namespace MaPremiereApplicationWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        Button monSecondBouton;
+
+
         public MainWindow()
         {
             InitializeComponent();
+
+            //instanciation du bouton
+            monSecondBouton = new Button();
+
+            //valeur de contenu 
+            monSecondBouton.Content = "ceci est un second bouton !!";
+
+            //evenement lors du clic
+            monSecondBouton.Click += MonSecondBouton_Click;
+
+
+            //ajout du second boutton graphiquement
+            MonPremierStackPanel.Children.Add(monSecondBouton);
+        }
+
+        //generer lors du l'ajout d'un evenement sur le bouton !!!
+        private void MonPremierBouton_Click(object sender, RoutedEventArgs e)
+        {
+            MonPremierLabel.Content = DateTime.Now;
+
+        }
+
+        private void MonSecondBouton_Click(object sender,RoutedEventArgs e)
+        {
+            MonPremierLabel.Content = DateTime.Now.Second;
+
         }
     }
 }
